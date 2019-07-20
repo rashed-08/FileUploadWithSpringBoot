@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Testing</title>
+</head>
+<body>
+	<form th:action="@{/mine}" th:object="${test}" method="post" id="mine">
+		Brand: <input type="text" placeholder="Brand" th:field="*{brand}">
+		Model: <input type="text" placeholder="Model" th:field="*{model}">
+		Engine: <input type="text" placeholder="Engine" th:field="*{typeOfEngine}"> 
+		<input type="submit" value="Submit">
+	</form>
+	<script th:src="@{/js/Jquery.min.js}"></script>
+	<script th:src="@{/js/test.js}"></script>
+</body>
+</html>

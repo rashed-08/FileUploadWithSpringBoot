@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/header.html :: head">
+<title id="pageTitle">Vas Oglas</title>
+</head>
+
+<body>
+	<header th:replace="fragments/navbar.html :: navbar"></header>
+
+	<div class="container">
+		<h1 class="main__header m-header">
+			<a href="#">Postavljanje oglasa</a>
+		</h1>
+		<form id="myForm" action="/test" th:action="@{/test}"
+			th:object="${test}" method="post">
+
+			<div class="choose">
+				<h1 class="main__header description__header">
+					<a href="#">Marka i model</a>
+				</h1>
+				<div class="choose__inputs">
+					<div class="choose__input">
+						<p class="choose__input__single"><span id="brand_span">Odaberite marku</span><input type="hidden" id="brand_value" th:field="*{brand}">
+							
+							<svg>
+                <use th:xlink:href="@{/image/sprite.svg#icon-chevron-down}"></use>
+              </svg>
+						</p>
+						<div class="allWrap">
+							<ul class="dropList odaberiteMarku">
+
+							</ul>
+						</div>
+					</div>
+					<div class="choose__input">
+						<p class="choose__input__single"><span id="model_span">Odaberite model</span><input type="hidden" id="model_value" th:field="*{model}">
+							<svg>
+                <use th:xlink:href="@{/image/sprite.svg#icon-chevron-down}"></use>
+              </svg>
+						</p>
+						<div class="allWrap mt-s">
+							<ul class="dropList odaberiteModel">
+
+							</ul>
+						</div>
+					</div>
+					<div class="grid-1-2">
+						<label>Obelezje</label><input type="text" placeholder="1.6 tdi"
+							th:field="*{typeOfEngine}">
+					</div>
+				</div>
+			</div>
+			<div class="buttonsOnBottom">
+				<input class="search__btn btn__dark" type="submit" value="Obriši">
+				<input class="search__btn" type="submit" value="Snimi">
+			</div>
+		</form>
+	</div>
+
+	<div th:replace="fragments/footer.html :: footer"></div>
+</body>
+</html>

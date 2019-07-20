@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+	<header th:fragment="navbar">
+		<nav class="nav">
+			<ul class="nav__items">
+				<li class="nav__item"><a class="nav__link" th:href="@{/automobili}">Automobili</a></li>
+				<li class="nav__item"><a class="nav__link logo" th:href="@{/servis}">Servis</a></li>
+				<li class="nav__item"><a th:href="@{/automobili}" class="logo">
+						<img th:src="@{/image/logo4.png}" alt="">
+				</a></li>
+				<li class="nav__item"><a class="nav__link" th:href="@{/delovi}">Delovi</a></li>
+				<li class="nav__item"><a class="nav__link" th:href="@{/usluge}">Usluge</a></li>
+			</ul>
+			<ul class="log__list">
+				<li class="nav__item"><a class="nav__link" th:href="@{/member}">Ulogujte
+						se</a></li>
+				<li class="nav__item"><a class="nav__link" th:href="@{/member}">Registracija</a></li>
+			</ul>
+		</nav>
+	</header>
+
+</body>
+</html>

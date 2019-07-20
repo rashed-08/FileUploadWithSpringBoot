@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Success</title>
+</head>
+<body>
+	<label>Name: <span th:text="${name}"></span></label>
+	<br>
+	<label>Email: <span th:text="${email}"></span></label>
+	<br>
+	<label>Phone: <span th:text="${phone}"></span></label>
+	<br>
+	<h3>Uploaded File</h3>
+	<ol th:each="file : ${uploadedFile}">
+		<li th:utext="${file}"></li>
+	</ol>
+	<h3>Failed File</h3>
+	<ol th:each="failed: ${failedFile}">
+		<li style="color: red" th:utext="$failed"></li>
+	</ol>
+</body>
+</html>
