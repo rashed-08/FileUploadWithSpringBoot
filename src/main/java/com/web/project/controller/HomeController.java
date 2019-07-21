@@ -60,7 +60,6 @@ public class HomeController {
 		try {
 			return addTest(test);
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
@@ -160,7 +159,7 @@ public class HomeController {
 	}
 
 	@RequestMapping("/download1")
-	public ResponseEntity<InputStreamResource> downloadFile(@RequestParam(defaultValue = fileName) String fileName)
+	public ResponseEntity<InputStreamResource> downloadFile(@RequestParam(name = fileName) String fileName)
 			throws FileNotFoundException {
 		MediaType mediaType = MediaTypeUtils.getMediaTypeForFileName(this.servletContext, fileName);
 		System.out.println("FileName: " + fileName);

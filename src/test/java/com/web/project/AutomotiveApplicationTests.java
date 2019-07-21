@@ -1,4 +1,4 @@
-package com.web.automotive;
+package com.web.project;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
